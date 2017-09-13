@@ -171,6 +171,11 @@
 			<version>${jackson.version}</version>
 		</dependency>
 		<dependency>
+			<groupId>org.glassfish.jersey.ext</groupId>
+			<artifactId>jersey-entity-filtering</artifactId>
+			<version>2.24</version>
+		</dependency>
+		<dependency>
 			<groupId>com.nimbusds.srp6a</groupId>
 			<artifactId>com.nimbusds.srp6a</artifactId>
 			<version>1.0.0</version>
