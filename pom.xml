@@ -19,7 +19,7 @@
 		<maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
 		<distributionspaket.status>BETA</distributionspaket.status>
 		<distributionspaket.standDatum>${maven.build.timestamp}</distributionspaket.standDatum>
-		<jackson.version>2.8.8</jackson.version>
+		<jackson.version>2.9.1</jackson.version>
 	</properties>
 
 	<licenses>
