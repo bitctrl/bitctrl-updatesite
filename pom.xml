@@ -230,20 +230,6 @@
 							<outputDirectory>${project.build.directory}/source/plugins</outputDirectory>
 						</configuration>
 					</execution>
-					<execution>
-							<id>src-dependencies</id>
-							<phase>package</phase>
-								<goals>
-										<!-- use copy-dependencies instead if you don't want to explode the sources -->
-								<!-- <goal>unpack-dependencies</goal> -->
-									<goal>copy-dependencies</goal>
-								</goals>
-								<configuration>
-									<classifier>sources</classifier>
-									<failOnMissingClassifierArtifact>false</failOnMissingClassifierArtifact>
-									<outputDirectory>${project.build.directory}/source/plugins</outputDirectory>
-								</configuration>
-							</execution>
 				</executions>
 			</plugin>
 			<plugin>
