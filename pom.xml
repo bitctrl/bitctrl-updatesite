@@ -5,7 +5,7 @@
 
 	<groupId>com.bitctrl</groupId>
 	<artifactId>bitctrl-updatesite</artifactId>
-	<version>2.0.3</version>
+	<version>3.0.0</version>
 	<packaging>pom</packaging>
 
 	<name>BitCtrl-Updateseite</name>
@@ -14,14 +14,20 @@
     </description>
 	<url>http://bitctrl.github.io/${project.artifactId}/</url>
 
+	<modules>
+		<module>com.bitctrl.jackson.feature</module>
+		<module>com.bitctrl.jersey.feature</module>
+		<module>com.bitctrl.common.updatesite</module>
+	</modules>
+
 	<properties>
-		<tycho.version>1.0.0</tycho.version>
+		<tycho-version>1.1.0</tycho-version>
 		<maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
 		<distributionspaket.status>BETA</distributionspaket.status>
 		<distributionspaket.standDatum>${maven.build.timestamp}</distributionspaket.standDatum>
-		<jackson.version>2.9.1</jackson.version>
-		<jersey.version>2.26</jersey.version>
-		<hibernate.version>5.2.12.Final</hibernate.version>
+		<jersey-version>2.26</jersey-version>
+		<hibernate-version>5.2.12.Final</hibernate-version>
+		<jackson-version>2.9.1</jackson-version>
 	</properties>
 
 	<licenses>
@@ -56,76 +62,85 @@
 		<url>https://travis-ci.org/bitctrl/${project.artifactId}/</url>
 	</ciManagement>
 
-	<profiles>
-		<profile>
-			<id>bitctrl</id>
-			<pluginRepositories>
-				<pluginRepository>
-					<snapshots>
-						<enabled>false</enabled>
-					</snapshots>
-					<id>bintray-datenverteiler-maven</id>
-					<name>bintray-plugins</name>
-					<url>http://dl.bintray.com/datenverteiler/maven</url>
-				</pluginRepository>
-			</pluginRepositories>
-			<repositories>
-				<repository>
-					<id>bitctrl.nexus.snapshots</id>
-					<name>Lokales BitCtrl Maven Snapshots Repository</name>
-					<url>http://bitctrlbuildserver:8081/nexus/content/repositories/snapshots/</url>
-				</repository>
-				<repository>
-					<id>bitctrl.nexus</id>
-					<name>BitCtrl Nexus Releases Repository</name>
-					<url>http://bitctrlbuildserver:8081/nexus/content/repositories/releases/</url>
-				</repository>
-				<repository>
-					<id>bintray-bitctrl-maven</id>
-					<name>bintray</name>
-					<url>http://dl.bintray.com/bitctrl/maven</url>
-				</repository>
-			</repositories>
-		</profile>
-		<profile>
-			<id>bintray</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<repositories>
-				<repository>
-					<snapshots>
-						<enabled>false</enabled>
-					</snapshots>
-					<id>bintray-bitctrl-maven</id>
-					<name>bintray</name>
-					<url>http://dl.bintray.com/bitctrl/maven</url>
-				</repository>
-			</repositories>
-			<pluginRepositories>
-				<pluginRepository>
-					<snapshots>
-						<enabled>false</enabled>
-					</snapshots>
-					<id>bintray-datenverteiler-maven</id>
-					<name>bintray-plugins</name>
-					<url>http://dl.bintray.com/datenverteiler/maven</url>
-				</pluginRepository>
-			</pluginRepositories>
-		</profile>
-		<profile>
-			<id>bintray-deploy</id>
-			<distributionManagement>
-				<repository>
-					<id>bintray-bitctrl-maven</id>
-					<name>bitctrl-maven</name>
-					<url>https://api.bintray.com/maven/bitctrl/maven/${project.artifactId}/;publish=1</url>
-				</repository>
-			</distributionManagement>
-		</profile>
-	</profiles>
+	<repositories>
+		<repository>
+			<id>bintray-bitctrl-maven</id>
+			<name>bintray</name>
+			<url>http://dl.bintray.com/bitctrl/maven</url>
+		</repository>
+		<repository>
+			<id>eclipse_neon</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/oxygen/</url>
+		</repository>
+	</repositories>
 
 	<dependencies>
+
+		<!-- Jackson - Dependencies -->
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>${jackson-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>${jackson-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.jaxrs</groupId>
+			<artifactId>jackson-jaxrs-base</artifactId>
+			<version>${jackson-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.jaxrs</groupId>
+			<artifactId>jackson-jaxrs-json-provider</artifactId>
+			<version>${jackson-version}</version>
+		</dependency>
+
+		<!-- Jersey - Dependencies -->
+
+		<dependency>
+			<groupId>org.glassfish.jersey.bundles</groupId>
+			<artifactId>jaxrs-ri</artifactId>
+			<version>${jersey-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.ext</groupId>
+			<artifactId>jersey-entity-filtering</artifactId>
+			<version>${jersey-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.inject</groupId>
+			<artifactId>jersey-hk2</artifactId>
+			<version>${jersey-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jersey.core</groupId>
+			<artifactId>jersey-common</artifactId>
+			<version>${jersey-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-json-jackson</artifactId>
+			<version>${jersey-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.containers</groupId>
+			<artifactId>jersey-container-jetty-http</artifactId>
+			<version>${jersey-version}</version>
+		</dependency>
+
+		<!-- Anderes -->
+
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
@@ -145,63 +160,6 @@
 			<groupId>commons-lang</groupId>
 			<artifactId>commons-lang</artifactId>
 			<version>2.6</version>
-		</dependency>
-		<dependency>
-			<groupId>org.glassfish.jersey.bundles</groupId>
-			<artifactId>jaxrs-ri</artifactId>
-			<version>${jersey.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-core</artifactId>
-			<version>${jackson.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.glassfish.jersey.ext</groupId>
-			<artifactId>jersey-entity-filtering</artifactId>
-			<version>${jersey.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.glassfish.jersey.inject</groupId>
-			<artifactId>jersey-hk2</artifactId>
-			<version>${jersey.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-annotations</artifactId>
-			<version>${jackson.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>${jackson.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.jaxrs</groupId>
-			<artifactId>jackson-jaxrs-base</artifactId>
-			<version>${jackson.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.glassfish.jersey.core</groupId>
-			<artifactId>jersey-common</artifactId>
-			<version>${jersey.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.glassfish.jersey.media</groupId>
-			<artifactId>jersey-media-json-jackson</artifactId>
-			<version>${jersey.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.glassfish.jersey.containers</groupId>
-			<artifactId>jersey-container-jetty-http</artifactId>
-			<version>${jersey.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.jaxrs</groupId>
-			<artifactId>jackson-jaxrs-json-provider</artifactId>
-			<version>${jackson.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.nimbusds.srp6a</groupId>
@@ -227,95 +185,78 @@
 	</dependencies>
 
 	<build>
-		<finalName>
-            ${project.artifactId}_${distributionspaket.status}_V${project.version}_D${distributionspaket.standDatum}
-        </finalName>
+		
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<version>2.10</version>
-				<executions>
-					<execution>
-						<id>copy-bundles-for-publishing</id>
-						<phase>process-resources</phase>
-						<goals>
-							<goal>copy-dependencies</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${project.build.directory}/source/plugins</outputDirectory>
-						</configuration>
-					</execution>
-				</executions>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
 			</plugin>
 			<plugin>
-				<groupId>org.eclipse.tycho.extras</groupId>
-				<artifactId>tycho-p2-extras-plugin</artifactId>
-				<version>${tycho.version}</version>
-				<executions>
-					<execution>
-						<id>generate-p2-repository</id>
-						<phase>prepare-package</phase>
-						<goals>
-							<goal>publish-features-and-bundles</goal>
-						</goals>
-					</execution>
-				</executions>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-versions-plugin</artifactId>
+				<version>${tycho-version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-p2-director-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<pomDependencies>consider</pomDependencies>
+					<environments>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86</arch>
+						</environment>
+						<environment>
+							<os>macosx</os>
+							<ws>cocoa</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-p2-plugin</artifactId>
-				<version>${tycho.version}</version>
+				<version>${tycho-version}</version>
 				<executions>
 					<execution>
-						<id>add-categories-to-p2-repository</id>
+						<id>attach-p2-metadata</id>
 						<phase>package</phase>
 						<goals>
-							<goal>category-p2-metadata</goal>
+							<goal>p2-metadata</goal>
 						</goals>
-						<configuration>
-							<target>${project.build.directory}/repository</target>
-							<categoryDefinition>${project.basedir}/category.xml</categoryDefinition>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>tycho-p2-repository-plugin</artifactId>
-				<version>${tycho.version}</version>
-				<executions>
-					<execution>
-						<id>zip-p2-repository</id>
-						<phase>package</phase>
-						<goals>
-							<goal>archive-repository</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-				<version>1.10</version>
-				<executions>
-					<execution>
-						<id>attach-zipped-p2-repository-to-be-installed-and-deployed</id>
-						<goals>
-							<goal>attach-artifact</goal>
-						</goals>
-						<configuration>
-							<artifacts>
-								<artifact>
-									<file>${project.build.directory}/${project.build.finalName}.zip</file>
-									<type>zip</type>
-								</artifact>
-							</artifacts>
-						</configuration>
 					</execution>
 				</executions>
 			</plugin>
 		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-p2-director-plugin</artifactId>
+					<version>${tycho-version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-p2-repository-plugin</artifactId>
+					<version>${tycho-version}</version>
+				</plugin>
+			</plugins>
+
+		</pluginManagement>
 	</build>
 
 </project>

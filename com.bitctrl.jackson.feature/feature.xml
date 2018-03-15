@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.bitctrl.jackson.feature"
+      label="%featureName"
+      version="2.9.1"
+      provider-name="%featureProvider">
+
+   <description>
+      %descriptionText
+   </description>
+
+   <copyright>
+      %copyrightText
+   </copyright>
+
+   <license url="http://www.gnu.org/licenses/gpl-2.0.html">
+      %licenseText
+   </license>
+
+   <includes
+         id="org.eclipse.equinox.server.jetty"
+         version="0.0.0"/>
+
+   <plugin
+         id="com.fasterxml.jackson.core.jackson-core"
+         download-size="0"
+         install-size="0"
+         version="2.9.1"
+         unpack="false"/>
+
+   <plugin
+         id="com.fasterxml.jackson.core.jackson-annotations"
+         download-size="0"
+         install-size="0"
+         version="2.9.1"
+         unpack="false"/>
+
+   <plugin
+         id="com.fasterxml.jackson.core.jackson-databind"
+         download-size="0"
+         install-size="0"
+         version="2.9.1"
+         unpack="false"/>
+
+   <plugin
+         id="com.fasterxml.jackson.jaxrs.jackson-jaxrs-base"
+         download-size="0"
+         install-size="0"
+         version="2.9.1"
+         unpack="false"/>
+
+   <plugin
+         id="com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider"
+         download-size="0"
+         install-size="0"
+         version="2.9.1"
+         unpack="false"/>
+
+</feature>
