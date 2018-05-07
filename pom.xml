@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.bitctrl</groupId>
 	<artifactId>bitctrl-updatesite</artifactId>
-	<version>2.0.3</version>
+	<version>2.0.4</version>
 	<packaging>pom</packaging>
 
 	<name>BitCtrl-Updateseite</name>
@@ -21,7 +22,7 @@
 		<distributionspaket.standDatum>${maven.build.timestamp}</distributionspaket.standDatum>
 		<jackson.version>2.9.1</jackson.version>
 		<jersey.version>2.26</jersey.version>
-		<hibernate.version>5.2.12.Final</hibernate.version>
+		<hibernate.version>5.2.17.Final</hibernate.version>
 	</properties>
 
 	<licenses>
@@ -182,9 +183,9 @@
 			<version>${jackson.version}</version>
 		</dependency>
 		<dependency>
-    		<groupId>org.glassfish.hk2</groupId>
-    		<artifactId>osgi-resource-locator</artifactId>
-    		<version>1.0.1</version>
+			<groupId>org.glassfish.hk2</groupId>
+			<artifactId>osgi-resource-locator</artifactId>
+			<version>1.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.glassfish.jersey.core</groupId>
@@ -228,9 +229,44 @@
 			<version>1.2.17</version>
 		</dependency>
 		<dependency>
-    		<groupId>org.mockito</groupId>
-    		<artifactId>mockito-core</artifactId>
-    		<version>2.15.0</version>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>2.15.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-ehcache</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-c3p0</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-jpamodelgen</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-osgi</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.1-api</artifactId>
+			<version>1.0.2.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate.common</groupId>
+			<artifactId>hibernate-commons-annotations</artifactId>
+			<version>5.0.3.Final</version>
 		</dependency>
 	</dependencies>
 
