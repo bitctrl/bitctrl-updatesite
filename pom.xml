@@ -16,7 +16,7 @@
 	<url>http://bitctrl.github.io/${project.artifactId}/</url>
 
 	<properties>
-		<tycho.version>1.5.0</tycho.version>
+		<tycho.version>1.7.0</tycho.version>
 		<maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
 		<distributionspaket.status>BETA</distributionspaket.status>
 		<distributionspaket.standDatum>${maven.build.timestamp}</distributionspaket.standDatum>
@@ -311,22 +311,19 @@
 			<artifactId>jaxb-runtime</artifactId>
 			<version>2.3.1</version>
 		</dependency>
-		<dependency>
-			<groupId>org.glassfish.jaxb</groupId>
-			<artifactId>jaxb-runtime</artifactId>
-			<version>2.3.2</version>
-		</dependency>
-		<dependency>
-			<groupId>jakarta.xml.bind</groupId>
-			<artifactId>jakarta.xml.bind-api</artifactId>
-			<version>2.3.2</version>
-		</dependency>
-		<dependency>
-			<groupId>jakarta.activation</groupId>
-			<artifactId>jakarta.activation-api</artifactId>
-			<version>1.2.1</version>
-			<scope>provided</scope>
-		</dependency>
+	
+             	<dependency>
+                	<groupId>jakarta.xml.bind</groupId>
+                	<artifactId>jakarta.xml.bind-api</artifactId>
+                	<version>2.3.3</version>
+            	</dependency>
+        
+               	<dependency>
+                	<groupId>com.sun.xml.bind</groupId>
+                	<artifactId>jaxb-impl</artifactId>
+                	<version>2.3.3</version>
+               	</dependency>
+        
 		<dependency>
 			<groupId>org.jboss.spec.javax.transaction</groupId>
 			<artifactId>jboss-transaction-api_1.2_spec</artifactId>
