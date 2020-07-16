@@ -320,6 +320,20 @@
     			<version>${jaxb-version}</version>
 		</dependency>
 		
+		<!-- Runtime -->
+		<dependency>
+    			<groupId>com.sun.xml.ws</groupId>
+    			<artifactId>jaxws-rt</artifactId>
+			<version>${jaxb-version}</version>
+		</dependency>
+		
+		<dependency>
+    			<groupId>com.sun.xml.ws</groupId>
+    			<artifactId>rt</artifactId>
+    			<version>${jaxb-version}</version>
+		</dependency>
+
+		
 		<dependency>
     			<groupId>jakarta.xml.bind</groupId>
     			<artifactId>jakarta.xml.bind-api</artifactId>
