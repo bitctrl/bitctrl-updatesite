@@ -320,6 +320,14 @@
     			<version>${jaxb-version}</version>
 		</dependency>
 		
+		<dependency>
+    			<groupId>com.sun.xml.ws</groupId>
+    			<artifactId>jaxws-ri</artifactId>
+    			<version>${jaxb-version}</version>
+    			<type>pom</type>
+		</dependency>
+
+		
 		<!-- Runtime -->
 		<dependency>
     			<groupId>com.sun.xml.ws</groupId>
