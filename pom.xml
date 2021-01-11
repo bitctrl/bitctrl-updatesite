@@ -423,6 +423,14 @@
   			<artifactId>j2html</artifactId>
   			<version>1.4.0</version>
 		</dependency>
+		
+		<dependency>
+  			<groupId>com.bitctrl.bccms</groupId>
+  			<artifactId>com.bitctrl.bccms.wsdl.abbas.bf</artifactId>
+  			<version>0.0.1-SNAPSHOT</version>
+  			<classifier>shade-jar-with-dependencies</classifier>
+			<optional>true</optional>
+		</dependency>
 	</dependencies>
 
 	<build>
