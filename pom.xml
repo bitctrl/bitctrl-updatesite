@@ -80,14 +80,9 @@
 			</pluginRepositories>
 			<repositories>
 				<repository>
-					<id>bitctrl.nexus.snapshots</id>
-					<name>Lokales BitCtrl Maven Snapshots Repository</name>
-					<url>http://bitctrlbuildserver:8081/nexus/content/repositories/snapshots/</url>
-				</repository>
-				<repository>
 					<id>bitctrl.nexus</id>
-					<name>BitCtrl Nexus Releases Repository</name>
-					<url>http://bitctrlbuildserver:8081/nexus/content/repositories/releases/</url>
+					<name>Lokales BitCtrl Maven Repository</name>
+					<url>http://bitctrlbuildserver:8081/nexus/repository/public/</url>
 				</repository>
 				<repository>
 					<id>bintray-bitctrl-maven</id>
@@ -95,6 +90,14 @@
 					<url>http://dl.bintray.com/bitctrl/maven</url>
 				</repository>
 			</repositories>
+			<dependencies>
+				<dependency>
+  					<groupId>com.bitctrl.bccms</groupId>
+  					<artifactId>com.bitctrl.bccms.wsdl.abbas.bf</artifactId>
+  					<version>0.0.1-SNAPSHOT</version>
+  					<classifier>shade-jar-with-dependencies</classifier>
+				</dependency>
+			</dependencies>
 		</profile>
 		<profile>
 			<id>bintray</id>
@@ -424,13 +427,6 @@
   			<version>1.4.0</version>
 		</dependency>
 		
-		<dependency>
-  			<groupId>com.bitctrl.bccms</groupId>
-  			<artifactId>com.bitctrl.bccms.wsdl.abbas.bf</artifactId>
-  			<version>0.0.1-SNAPSHOT</version>
-  			<classifier>shade-jar-with-dependencies</classifier>
-			<optional>true</optional>
-		</dependency>
 	</dependencies>
 
 	<build>
