@@ -95,6 +95,20 @@
 					<url>http://dl.bintray.com/bitctrl/maven</url>
 				</repository>
 			</repositories>
+			<dependencies>
+				<dependency>
+  					<groupId>com.bitctrl.bccms</groupId>
+  					<artifactId>com.bitctrl.bccms.wsdl.abbas.bf</artifactId>
+  					<version>(,1.0]</version>
+  					<classifier>shade-jar-with-dependencies</classifier>
+				</dependency>
+				<dependency>
+  					<groupId>com.bitctrl.bcvss</groupId>
+  					<artifactId>com.bitctrl.bcvss.wsdl.api</artifactId>
+  					<version>[1,2)</version>
+  					<classifier>shade-jar-with-dependencies</classifier>
+				</dependency>
+			</dependencies>
 		</profile>
 		<profile>
 			<id>bintray</id>
@@ -423,6 +437,7 @@
   			<artifactId>j2html</artifactId>
   			<version>1.4.0</version>
 		</dependency>
+		
 	</dependencies>
 
 	<build>
