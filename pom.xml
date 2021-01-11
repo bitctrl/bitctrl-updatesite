@@ -80,9 +80,14 @@
 			</pluginRepositories>
 			<repositories>
 				<repository>
+					<id>bitctrl.nexus.snapshots</id>
+					<name>Lokales BitCtrl Maven Snapshots Repository</name>
+					<url>http://bitctrlbuildserver:8081/nexus/content/repositories/snapshots/</url>
+				</repository>
+				<repository>
 					<id>bitctrl.nexus</id>
-					<name>Lokales BitCtrl Maven Repository</name>
-					<url>http://bitctrlbuildserver:8081/nexus/repository/public/</url>
+					<name>BitCtrl Nexus Releases Repository</name>
+					<url>http://bitctrlbuildserver:8081/nexus/content/repositories/releases/</url>
 				</repository>
 				<repository>
 					<id>bintray-bitctrl-maven</id>
