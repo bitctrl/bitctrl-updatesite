@@ -87,19 +87,9 @@
 			</pluginRepositories>
 			<repositories>
 				<repository>
-					<id>bitctrl.nexus.snapshots</id>
-					<name>Lokales BitCtrl Maven Snapshots Repository</name>
-					<url>http://bitctrlbuildserver:8081/nexus/content/repositories/snapshots/</url>
-				</repository>
-				<repository>
 					<id>bitctrl.nexus</id>
-					<name>BitCtrl Nexus Releases Repository</name>
-					<url>http://bitctrlbuildserver:8081/nexus/content/repositories/releases/</url>
-				</repository>
-				<repository>
-					<id>bintray-bitctrl-maven</id>
-					<name>bintray</name>
-					<url>http://dl.bintray.com/bitctrl/maven</url>
+					<name>Lokales BitCtrl Maven Snapshots Repository</name>
+					<url>http://bitctrlbuildserver:8081/nexus/repository/public/</url>
 				</repository>
 			</repositories>
 			<dependencies>
@@ -114,6 +104,11 @@
   					<artifactId>com.bitctrl.bcvss.wsdl.api</artifactId>
   					<version>[1,2)</version>
   					<classifier>shade-jar-with-dependencies</classifier>
+				</dependency>
+				<dependency>
+					<groupId>com.bitctrl</groupId>
+					<artifactId>onvif-java</artifactId>
+					<version>[1,2)</version>
 				</dependency>
 			</dependencies>
 		</profile>
