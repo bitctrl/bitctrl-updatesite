@@ -20,7 +20,7 @@
 		<maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
 		<distributionspaket.status>BETA</distributionspaket.status>
 		<distributionspaket.standDatum>${maven.build.timestamp}</distributionspaket.standDatum>
-		<jackson.version>[2.9.8,)</jackson.version>
+		<jackson.version>[2.9.8,3)</jackson.version>
 		<jersey.version>2.26</jersey.version>
 		<hibernate.version>5.4.9.Final</hibernate.version>
 		<jaxb-version>2.3.3</jaxb-version>
