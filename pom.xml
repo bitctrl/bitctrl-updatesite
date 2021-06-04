@@ -68,8 +68,8 @@
 			<url>https://download.osgeo.org/webdav/geotools/</url>
 		</repository>
 		<repository>
-			<id>github</id>
-			<url>https://maven.pkg.github.com/bitctrl/*</url>
+			<id>jfrog-bitctrl-public</id>
+			<url>https://bitctrl.jfrog.io/artifactory/bitctrl-maven-public/</url>
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
