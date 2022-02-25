@@ -22,7 +22,7 @@
 		<distributionspaket.standDatum>${maven.build.timestamp}</distributionspaket.standDatum>
 		<jackson.version>2.12.3</jackson.version>
 		<jersey.version>2.26</jersey.version>
-		<hibernate.version>5.4.9.Final</hibernate.version>
+		<hibernate.version>5.4.24.Final</hibernate.version>
 		<jaxb-version>2.3.3</jaxb-version>
 	</properties>
 
