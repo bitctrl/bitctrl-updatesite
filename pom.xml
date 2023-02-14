@@ -16,7 +16,7 @@
 	<url>http://bitctrl.github.io/${project.artifactId}/</url>
 
 	<properties>
-		<tycho.version>2.3.0</tycho.version>
+		<tycho.version>3.0.2</tycho.version>
 		<maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
 		<distributionspaket.status>BETA</distributionspaket.status>
 		<distributionspaket.standDatum>${maven.build.timestamp}</distributionspaket.standDatum>
