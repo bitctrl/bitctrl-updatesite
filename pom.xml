@@ -442,7 +442,7 @@
 							<goal>category-p2-metadata</goal>
 						</goals>
 						<configuration>
-							<target>${project.build.directory}/repository</target>
+							<!--<target>${project.build.directory}/repository</target>-->
 							<categoryDefinition>${project.basedir}/category.xml</categoryDefinition>
 						</configuration>
 					</execution>
