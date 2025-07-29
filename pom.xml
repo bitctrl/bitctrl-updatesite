@@ -120,11 +120,13 @@
 			<artifactId>srp6a</artifactId>
 			<version>2.0.0</version>
 		</dependency>
+		<!--
 		<dependency>
 			<groupId>com.bitctrl</groupId>
 			<artifactId>com.bitctrl</artifactId>
 			<version>2.1.0-SNAPSHOT</version>
 		</dependency>
+		-->
 		<dependency>
 			<groupId>commons-lang</groupId>
 			<artifactId>commons-lang</artifactId>
