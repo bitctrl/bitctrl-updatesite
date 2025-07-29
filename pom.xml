@@ -66,6 +66,7 @@
 			<id>geotools-repo</id>
 			<url>https://download.osgeo.org/webdav/geotools/</url>
 		</repository>
+		<!--
 		<repository>
 			<id>jfrog-bitctrl-public</id>
 			<url>https://bitctrl.jfrog.io/artifactory/bitctrl-maven-public/</url>
@@ -73,6 +74,7 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
+		-->
 	</repositories>
 
 	<profiles>
